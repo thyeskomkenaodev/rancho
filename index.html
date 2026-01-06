@@ -1627,7 +1627,7 @@
                 
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/16pmya9qkG/" target="_blank" aria-label="Link para o Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/pointdoacaibrasilandiams?igsh=MW5tcnUzOTF1N2t4eA==" target="_blank" aria-label="Link para o Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.instagram.com/ranchoacai?igsh=MWFwb3Zmdm1maXVuYw==" target="_blank" aria-label="Link para o Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="https://wa.me/5567999361566" target="_blank" aria-label="Link para o WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 
@@ -1640,7 +1640,7 @@
 
     <!-- Botões Flutuantes de Redes Sociais -->
     <div class="social-flutuante">
-        <a href="https://www.instagram.com/pointdoacaibrasilandiams?igsh=MW5tcnUzOTF1N2t4eA==" target="_blank" class="social-icon instagram" aria-label="Siga-nos no Instagram">
+        <a href="https://www.instagram.com/ranchoacai?igsh=MWFwb3Zmdm1maXVuYw==" target="_blank" class="social-icon instagram" aria-label="Siga-nos no Instagram">
             <i class="fab fa-instagram"></i>
         </a>
         <a href="https://www.facebook.com/share/16pmya9qkG/" target="_blank" class="social-icon facebook" aria-label="Curta nossa página no Facebook">
@@ -1696,23 +1696,15 @@
                     <input type="tel" id="telefone-cliente" placeholder="(XX) XXXXX-XXXX" required>
                 </div>
 
-                <h4 class="form-section-title">Endereço de Entrega</h4>
-                <h4 class="form-section-title">Tipo de Pedido</h4>
                 <div class="form-group">
-                    <label for="bairro-cliente">Bairro</label>
-                    <input type="text" id="bairro-cliente" required>
                     <label for="tipo-entrega">Entrega ou Retirada?</label>
                     <select id="tipo-entrega" required>
-                        <option value="Entrega">Entrega</option>
                         <option value="Retirada">Retirada no Local</option>
+                        <option value="Entrega">Entrega</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="rua-cliente">Rua e Número</label>
-                    <input type="text" id="rua-cliente" required>
 
-                <div id="endereco-group">
-                    <h4 class="form-section-title">Endereço de Entrega</h4>
+                <div id="endereco-group" style="display: none;">
                     <div class="form-group">
                         <label for="bairro-cliente">Bairro</label>
                         <input type="text" id="bairro-cliente" required>
@@ -1799,6 +1791,8 @@
                     enderecoGroup.style.display = 'none';
                     bairroInput.required = false;
                     ruaInput.required = false;
+                    bairroInput.value = '';
+                    ruaInput.value = '';
                 } else {
                     enderecoGroup.style.display = 'block';
                     bairroInput.required = true;
@@ -1944,9 +1938,6 @@
                 let mensagem = `*Novo Pedido - Rancho do Açaí*\n\n`;
                 mensagem += `*Cliente:* ${nomeCliente}\n`;
                 mensagem += `*Telefone:* ${telefoneCliente}\n\n`;
-                mensagem += `*Endereço de Entrega:*\n`;
-                mensagem += `Bairro: ${bairroCliente}\n`;
-                mensagem += `Rua: ${ruaCliente}\n\n`;
                 mensagem += `*Tipo de Pedido:* ${tipoEntrega}\n`;
                 
                 if (tipoEntrega === 'Entrega') {
@@ -1992,6 +1983,7 @@
                 carrinhoModal.classList.remove('aberto');
                 pedidoForm.reset();
                 toggleTrocoField(); // Garante que o campo de troco seja resetado corretamente
+                toggleEnderecoField(); // Garante que o campo de endereço seja atualizado corretamente
             });
             
             // Limpar carrinho
