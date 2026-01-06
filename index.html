@@ -1,0 +1,2159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rancho do Açaí - O melhor açaí da região!</title>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Fonte Personalizada para o Logotipo -->
+    <link href="elipc.png" rel="stylesheet">
+    <link rel="shortcut icon" href="" type="image/jpeg">
+    <style>
+        :root {
+            --roxo-primario: #6a0dad;
+            --roxo-secundario: #8a2be2;
+            --roxo-claro: #e6e6fa;
+            --amarelo-primario: #FFD700;
+            --amarelo-secundario: #FFDF00;
+            --amarelo-claro: #FFFACD;
+            --branco: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--branco);
+            color: #333;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--roxo-primario), var(--roxo-secundario));
+            color: var(--branco);
+            padding: 1rem 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo img {
+            height: 50px;
+            animation: pulse 2s infinite;
+            border-radius: 50%;
+        }
+        
+        .logo h1 {
+            font-family: 'Fredoka One', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--amarelo-claro);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--amarelo-primario);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .hero {
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            margin-top: 70px;
+            position: relative;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(106, 13, 173, 0.6);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: var(--branco);
+            max-width: 600px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--amarelo-primario);
+            color: var(--roxo-primario);
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid var(--amarelo-primario);
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: transparent;
+            color: var(--amarelo-primario);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-roxo {
+            background-color: var(--roxo-primario);
+            color: var(--branco);
+        }
+        
+        .btn-roxo:hover {
+            background-color: var(--roxo-secundario);
+            color: var(--branco);
+        }
+        
+        .btn-pequeno {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--roxo-primario);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, var(--roxo-secundario), var(--amarelo-primario));
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        .produtos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .produto {
+            background-color: var(--branco);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease;
+            border: 1px solid var(--roxo-claro);
+        }
+        
+        .produto:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .produto-img {
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .produto-img .destaque {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--amarelo-primario);
+            color: var(--roxo-primario);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            z-index: 2;
+        }
+        
+        .produto-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.5s ease;
+        }
+        
+        .produto:hover .produto-img img {
+            transform: scale(1.1);
+        }
+        
+        .produto-info {
+            padding: 1.5rem;
+        }
+        
+        .produto-info h3 {
+            color: var(--roxo-primario);
+            margin-bottom: 0.5rem;
+        }
+        
+        .produto-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .preco {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--roxo-secundario);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .preco .promocao {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 1rem;
+            margin-right: 0.5rem;
+        }
+        
+        .quantidade-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .quantidade-btn {
+            background-color: var(--roxo-claro);
+            color: var(--roxo-primario);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quantidade-btn:hover {
+            background-color: var(--roxo-primario);
+            color: var(--branco);
+        }
+        
+        .quantidade-input {
+            width: 50px;
+            text-align: center;
+            margin: 0 0.5rem;
+            padding: 0.3rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .ingredientes-adicionais {
+            margin-bottom: 1rem;
+        }
+        
+        .ingredientes-title {
+            font-weight: 600;
+            color: var(--roxo-primario);
+            margin-bottom: 0.5rem;
+        }
+        
+        .ingredientes-opcoes {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .ingrediente-option {
+            display: flex;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+        
+        .ingrediente-option input {
+            margin-right: 0.5rem;
+        }
+        
+        .ingrediente-preco {
+            font-size: 0.8rem;
+            color: var(--roxo-secundario);
+            margin-left: 0.3rem;
+        }
+        
+        .categorias {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .categoria-btn {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--roxo-claro);
+            color: var(--roxo-primario);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .categoria-btn:hover, .categoria-btn.ativo {
+            background-color: var(--roxo-primario);
+            color: var(--branco);
+        }
+        
+        .formulario {
+            background-color: var(--roxo-claro);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease;
+            border: 1px solid var(--amarelo-claro);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--roxo-primario);
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--roxo-primario);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(106, 13, 173, 0.2);
+        }
+        
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        footer {
+            background: linear-gradient(135deg, var(--roxo-primario), var(--roxo-secundario));
+            color: var(--branco);
+            padding: 3rem 0 1rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .social-links a {
+            color: var(--amarelo-primario);
+            font-size: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: var(--amarelo-claro);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+        
+        /* Carrinho de Compras */
+        .carrinho-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--amarelo-primario);
+            color: var(--roxo-primario);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+        }
+        
+        .carrinho-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .carrinho-contador {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background-color: var(--roxo-primario);
+            color: var(--branco);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .carrinho-modal {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            max-width: 400px;
+            height: 100vh;
+            background-color: var(--branco);
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+        
+        .carrinho-modal.aberto {
+            right: 0;
+        }
+        
+        .carrinho-header {
+            background: linear-gradient(135deg, var(--roxo-primario), var(--roxo-secundario));
+            color: var(--branco);
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .carrinho-header h3 {
+            margin: 0;
+        }
+        
+        .fechar-carrinho {
+            background: none;
+            border: none;
+            color: var(--branco);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        .carrinho-itens {
+            padding: 1.5rem;
+        }
+        
+        .carrinho-item {
+            display: flex;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .carrinho-item-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+        
+        .carrinho-item-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .carrinho-item-info {
+            flex: 1;
+        }
+        
+        .carrinho-item-nome {
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .carrinho-item-adicionais {
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 0.3rem;
+        }
+        
+        .carrinho-item-preco {
+            color: var(--roxo-primario);
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        
+        .carrinho-item-quantidade {
+            display: flex;
+            align-items: center;
+        }
+        
+        .carrinho-total {
+            padding: 1.5rem;
+            background-color: var(--roxo-claro);
+            margin: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .carrinho-total h4 {
+            margin-bottom: 1rem;
+            color: var(--roxo-primario);
+        }
+        
+        .carrinho-total-valor {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--roxo-secundario);
+        }
+        
+        .carrinho-acoes {
+            padding: 0 1.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .carrinho-vazio {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        /* Animações */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+            20%, 40%, 60%, 80% { transform: translateX(5px); }
+        }
+        
+        /* Botões Flutuantes de Redes Sociais */
+        .social-flutuante {
+            position: fixed;
+            top: 50%;
+            right: 20px; /* Movido para a direita */
+            transform: translateY(-50%);
+            z-index: 998;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: var(--branco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1) translateX(-5px); /* Ajustado para mover para a esquerda */
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-icon.instagram {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        }
+
+        .social-icon.facebook {
+            background-color: #3b5998;
+        }
+
+        .social-icon.whatsapp {
+            background-color: #25D366;
+        }
+
+        /* Ajustes dos ícones flutuantes para telas menores */
+        @media (max-width: 992px) {
+            .social-flutuante {
+                gap: 0.8rem; /* Reduz o espaçamento entre os ícones */
+                right: 10px; /* Aproxima da borda */
+            }
+
+            .social-icon {
+                width: 40px; /* Diminui o tamanho do balão */
+                height: 40px;
+                font-size: 1.2rem; /* Diminui o tamanho do ícone */
+            }
+        }
+
+        /* Modal de Pedido */
+        .pedido-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none; /* Escondido por padrão */
+            align-items: center;
+            justify-content: center;
+            z-index: 1002;
+            padding: 1rem;
+        }
+
+        .pedido-modal-overlay.aberto {
+            display: flex;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .pedido-modal-content {
+            background-color: var(--branco);
+            padding: 2rem;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: fadeInUp 0.4s ease;
+            position: relative;
+        }
+
+        .pedido-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pedido-modal-header h3 {
+            color: var(--roxo-primario);
+            margin: 0;
+        }
+
+        .fechar-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+
+        #pedido-form .form-section-title {
+            color: var(--roxo-secundario);
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--roxo-claro);
+            padding-bottom: 0.5rem;
+        }
+
+        #pedido-form .form-group {
+            margin-bottom: 1rem;
+        }
+
+        #pedido-form .form-group input,
+        #pedido-form .form-group select {
+            background-color: #f9f9f9;
+        }
+        
+        /* Menu Mobile Toggle */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--branco);
+        }
+        
+        /* Ajuste para telas muito pequenas */
+        @media (max-width: 350px) {
+            .logo h1 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-wrap: wrap;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+                width: 100%;
+                margin-top: 1rem;
+                border-top: 1px solid rgba(255,255,255,0.1);
+            }
+            
+            nav.active {
+                display: block;
+                animation: fadeIn 0.5s ease;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+                text-align: center;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+            
+            .carrinho-modal {
+                width: 90%;
+            }
+            
+            .produtos {
+                grid-template-columns: 1fr; /* Uma coluna em mobile para melhor visualização */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Rancho do Açaí">
+                    <h1>Rancho do Açaí</h1>
+                </div>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Início</a></li>
+                        <li><a href="#produtos">Produtos</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <img src="banner.jpeg" alt="Banner Rancho do Açaí" class="hero-bg">
+        <div class="container">
+            <div class="hero-content">
+                <h2>O melhor açaí da região!</h2>
+                <p>Delicie-se com nosso açaí cremoso e saboroso, preparado com os melhores ingredientes e acompanhamentos frescos. Experimente hoje mesmo!</p>
+                <a href="#produtos" class="btn">Ver Produtos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="produtos">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            
+            <div class="categorias">
+                <button class="categoria-btn ativo" data-categoria="todos">Todos</button>
+                <button class="categoria-btn" data-categoria="copos">Copos</button>
+                <button class="categoria-btn" data-categoria="combos">Combos</button>
+                <button class="categoria-btn" data-categoria="barcas">Barca / Roleta</button>
+                <button class="categoria-btn" data-categoria="especiais">Especiais</button>
+            </div>
+            
+            <div class="produtos">
+                <!-- Copos de Açaí -->
+                <div class="produto" data-categoria="copos">
+                    <div class="produto-img">
+                        <img src="copo330.jpg" alt="Copo 330ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Copo 330ml</h3>
+                        <p>Açaí puro e cremoso no tamanho ideal para seu lanche.</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="0.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="0.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="0.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="0.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="0.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-ninho" data-preco="0.00"> Creme de Ninho
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-manga" data-preco="0.00"> Creme de Manga
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-maracuja" data-preco="0.00"> Creme de Maracujá
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 330ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="copos">
+                    <div class="produto-img">
+                        <img src="copo550.jpg" alt="Copo 550ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Copo 550ml</h3>
+                        <p>Açaí cremoso no copo médio, perfeito para matar a vontade.</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="0.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="0.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="0.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="0.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="0.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-ninho" data-preco="0.00"> Creme de Ninho
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-manga" data-preco="0.00"> Creme de Manga
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-maracuja" data-preco="0.00"> Creme de Maracujá
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 550ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="copos">
+                    <div class="produto-img">
+                        <span class="destaque">Mais Vendido</span>
+                        <img src="copo770.jpg" alt="Copo 770ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Copo 770ml</h3>
+                        <p>Para quem tem muita fome! Nosso maior copo de açaí.</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="0.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="0.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="0.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="0.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="0.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-ninho" data-preco="0.00"> Creme de Ninho
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-manga" data-preco="0.00"> Creme de Manga
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-maracuja" data-preco="0.00"> Creme de Maracujá
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 770ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Combos de Açaí -->
+                <div class="produto" data-categoria="especiais">
+                    <div class="produto-img">
+                        <img src="acaigarrafa.jpg" alt="Açaí na Garrafa 550ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Açaí na Garrafa 550ml</h3>
+                        <p>Açaí puro e cremoso na garrafa, ideal para compartilhar ou para quem quer mais!</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Açaí na Garrafa 550ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="combos">
+                    <div class="produto-img">
+                        <img src="combo300.jpg" alt="Combo Rancho 330ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Combo Rancho 330ml</h3>
+                        <p>Açaí acompanhado de Leite em pó, Leite condensado e Banana.</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Rancho 330ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="combos">
+                    <div class="produto-img">
+                        <span class="destaque">Novidade</span>
+                        <img src="combo550.avif" alt="Combo Rancho 550ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Combo Rancho 550ml</h3>
+                        <p>Açaí acompanhado de Leite em pó, Leite condensado e Banana.</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Rancho 550ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Barcas de Açaí -->
+                <div class="produto" data-categoria="barcas">
+                    <div class="produto-img">
+                        <img src="barca.jpg" alt="Barca de Açaí Média">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Barca</h3>
+                        <p>Nossa barca média vem com açaí, banana, morango, granola e leite em pó. Perfeita para dividir!</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais Extras:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado-extra" data-preco="0.00"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Barca" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="produto" data-categoria="barcas">
+                    <div class="produto-img">
+                        <span class="destaque">Para a Galera</span>
+                        <img src="roleta.jpg" alt="Barca de Açaí Grande">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Roleta</h3>
+                        <p>Açaí para toda a turma! Acompanha banana, morango, kiwi, granola, leite em pó e leite condensado.</p>
+                        <span class="preco">R$ 0,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais Extras:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="frutas-vermelhas" data-preco="0.00"> Frutas Vermelhas
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="whey" data-preco="0.00"> Whey Protein
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="0.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Roleta" data-preco="0.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="sobre-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">O Rancho do Açaí nasceu da paixão por oferecer o melhor açaí da região, com qualidade incomparável e sabor inigualável.</p>
+                <p style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">Nossa missão é levar até você a autêntica experiência do açaí, preparado com frutas selecionadas e acompanhamentos frescos, garantindo sabor e saúde em cada colherada.</p>
+                <div style="margin: 2rem 0;">
+                    <h3 style="color: var(--roxo-primario); margin-bottom: 1rem;">Nosso Diferencial</h3>
+                    <p style="line-height: 1.6;">Usamos apenas açaí 100% natural, sem conservantes ou corantes artificiais. Todos os dias preparamos nosso açai com frutas frescas para garantir o melhor sabor!</p>
+                </div>
+                <p style="line-height: 1.6; font-size: 1.1rem;">Visite nosso ponto e descubra por que somos a preferência dos amantes de açaí!</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato">
+        <div class="container">
+            <h2 class="section-title">Contato</h2>
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-map-marker-alt" style="color: var(--roxo-primario); margin-right: 10px;"></i> RUA DOMINICIA LAURA BATISTA, 614 - BRASILANDIA</p>
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-phone" style="color: var(--roxo-primario); margin-right: 10px;"></i> (67) 99936-1566</p>
+                <p style="font-size: 1.1rem;"><i class="fas fa-envelope" style="color: var(--roxo-primario); margin-right: 10px;"></i> </p>
+            </div>
+            <div style="text-align: center;">
+                <h3 style="color: var(--roxo-primario); margin-bottom: 1rem;">Horário de Funcionamento</h3>
+                <p style="margin-bottom: 0.5rem;">Segunda a Sexta: 14h às 23h</p>
+                <p>Sábado e Domingo: 14h às 23h</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="logo.jpg" alt="Rancho do Açaí">
+                    <h1 style="color: var(--branco);">Rancho do Açaí</h1>
+                </div>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/16pmya9qkG/" target="_blank" aria-label="Link para o Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/pointdoacaibrasilandiams?igsh=MW5tcnUzOTF1N2t4eA==" target="_blank" aria-label="Link para o Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5567999361566" target="_blank" aria-label="Link para o WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                
+                <div class="copyright">
+                    <p>&copy; 2025 Thyesko Menão. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botões Flutuantes de Redes Sociais -->
+    <div class="social-flutuante">
+        <a href="https://www.instagram.com/pointdoacaibrasilandiams?igsh=MW5tcnUzOTF1N2t4eA==" target="_blank" class="social-icon instagram" aria-label="Siga-nos no Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/share/16pmya9qkG/" target="_blank" class="social-icon facebook" aria-label="Curta nossa página no Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/5567999361566" target="_blank" class="social-icon whatsapp" aria-label="Fale conosco no WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <!-- Carrinho de Compras -->
+    <div class="carrinho-btn">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="carrinho-contador">0</span>
+    </div>
+    
+    <div class="carrinho-modal">
+        <div class="carrinho-header">
+            <h3>Seu Carrinho</h3>
+            <button class="fechar-carrinho"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="carrinho-itens">
+            <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+            <div class="carrinho-vazio">
+                <p>Seu carrinho está vazio</p>
+            </div>
+        </div>
+        <div class="carrinho-total">
+            <h4>Total</h4>
+            <div class="carrinho-total-valor">R$ 0,00</div>
+        </div>
+        <div class="carrinho-acoes">
+            <button class="btn btn-roxo" style="width: 100%;" id="finalizar-pedido">Finalizar Pedido</button>
+            <button class="btn" style="width: 100%; background-color: #f8f9fa; color: #333;" id="limpar-carrinho">Limpar Carrinho</button>
+        </div>
+    </div>
+
+    <!-- Modal de Pedido -->
+    <div class="pedido-modal-overlay" id="pedido-modal">
+        <div class="pedido-modal-content">
+            <div class="pedido-modal-header">
+                <h3>Finalizar Pedido</h3>
+                <button class="fechar-modal" id="fechar-pedido-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <form id="pedido-form">
+                <h4 class="form-section-title">Seus Dados</h4>
+                <div class="form-group">
+                    <label for="nome-cliente">Nome Completo</label>
+                    <input type="text" id="nome-cliente" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone-cliente">Telefone (WhatsApp)</label>
+                    <input type="tel" id="telefone-cliente" placeholder="(XX) XXXXX-XXXX" required>
+                </div>
+
+                <h4 class="form-section-title">Endereço de Entrega</h4>
+                <h4 class="form-section-title">Tipo de Pedido</h4>
+                <div class="form-group">
+                    <label for="bairro-cliente">Bairro</label>
+                    <input type="text" id="bairro-cliente" required>
+                    <label for="tipo-entrega">Entrega ou Retirada?</label>
+                    <select id="tipo-entrega" required>
+                        <option value="Entrega">Entrega</option>
+                        <option value="Retirada">Retirada no Local</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="rua-cliente">Rua e Número</label>
+                    <input type="text" id="rua-cliente" required>
+
+                <div id="endereco-group">
+                    <h4 class="form-section-title">Endereço de Entrega</h4>
+                    <div class="form-group">
+                        <label for="bairro-cliente">Bairro</label>
+                        <input type="text" id="bairro-cliente" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="rua-cliente">Rua e Número</label>
+                        <input type="text" id="rua-cliente" required>
+                    </div>
+                </div>
+
+                <h4 class="form-section-title">Pagamento</h4>
+                <div class="form-group">
+                    <label for="pagamento-cliente">Forma de Pagamento</label>
+                    <select id="pagamento-cliente" required>
+                        <option value="Dinheiro">Dinheiro</option>
+                        <option value="Cartão de Crédito/Débito">Cartão de Crédito/Débito</option>
+                        <option value="Pix">Pix</option>
+                    </select>
+                </div>
+                <div class="form-group" id="troco-group" style="display: none;">
+                    <label for="valor-troco">Valor que será pago (para troco)</label>
+                    <input type="number" id="valor-troco" placeholder="Ex: 50.00" step="0.01">
+                </div>
+                <button type="submit" class="btn btn-roxo" style="width: 100%;">Enviar Pedido via WhatsApp</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Carrinho de Compras
+        document.addEventListener('DOMContentLoaded', function() {
+            const carrinhoBtn = document.querySelector('.carrinho-btn');
+            const carrinhoModal = document.querySelector('.carrinho-modal');
+            const fecharCarrinho = document.querySelector('.fechar-carrinho');
+            const carrinhoItens = document.querySelector('.carrinho-itens');
+            const carrinhoContador = document.querySelector('.carrinho-contador');
+            const carrinhoTotal = document.querySelector('.carrinho-total-valor');
+            const finalizarPedidoBtn = document.getElementById('finalizar-pedido');
+            const limparCarrinhoBtn = document.getElementById('limpar-carrinho');
+            const pedidoModal = document.getElementById('pedido-modal');
+            const fecharPedidoModal = document.getElementById('fechar-pedido-modal');
+            const pedidoForm = document.getElementById('pedido-form');
+            const pagamentoClienteSelect = document.getElementById('pagamento-cliente');
+            const trocoGroup = document.getElementById('troco-group');
+            const valorTrocoInput = document.getElementById('valor-troco');
+            const tipoEntregaSelect = document.getElementById('tipo-entrega');
+            const enderecoGroup = document.getElementById('endereco-group');
+            const bairroInput = document.getElementById('bairro-cliente');
+            const ruaInput = document.getElementById('rua-cliente');
+
+            
+            let carrinho = [];
+
+            // Menu Mobile Toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const nav = document.querySelector('nav');
+            const navLinks = document.querySelectorAll('nav a');
+
+            menuToggle.addEventListener('click', () => {
+                nav.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('active');
+                });
+            });
+
+            // Função para mostrar/esconder campo de troco
+            function toggleTrocoField() {
+                if (pagamentoClienteSelect.value === 'Dinheiro') {
+                    trocoGroup.style.display = 'block';
+                    valorTrocoInput.required = true;
+                } else {
+                    trocoGroup.style.display = 'none';
+                    valorTrocoInput.required = false;
+                    valorTrocoInput.value = '';
+                }
+            }
+
+            // Função para mostrar/esconder endereço
+            function toggleEnderecoField() {
+                if (tipoEntregaSelect.value === 'Retirada') {
+                    enderecoGroup.style.display = 'none';
+                    bairroInput.required = false;
+                    ruaInput.required = false;
+                } else {
+                    enderecoGroup.style.display = 'block';
+                    bairroInput.required = true;
+                    ruaInput.required = true;
+                }
+            }
+
+            // Checagem inicial e listener para o campo de pagamento
+            toggleTrocoField();
+            toggleEnderecoField();
+            pagamentoClienteSelect.addEventListener('change', toggleTrocoField);
+            tipoEntregaSelect.addEventListener('change', toggleEnderecoField);
+            
+            // Abrir/fechar carrinho
+            carrinhoBtn.addEventListener('click', function() {
+                carrinhoModal.classList.add('aberto');
+            });
+            
+            fecharCarrinho.addEventListener('click', function() {
+                carrinhoModal.classList.remove('aberto');
+            });
+
+            fecharPedidoModal.addEventListener('click', function() {
+                pedidoModal.classList.remove('aberto');
+            });
+            
+            // Adicionar ao carrinho
+            document.querySelectorAll('.adicionar-carrinho').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const produto = this.parentElement;
+                    const nome = this.getAttribute('data-nome');
+                    const preco = parseFloat(this.getAttribute('data-preco'));
+                    const quantidade = parseInt(produto.querySelector('.quantidade-input').value);
+                    const imagem = produto.parentElement.querySelector('.produto-img img').src;
+                    
+                    // Obter ingredientes adicionais selecionados
+                    const adicionais = [];
+                    let adicionalTotal = 0;
+                    
+                    produto.querySelectorAll('input[name="adicionais"]:checked').forEach(adicional => {
+                        const nomeAdicional = adicional.value;
+                        const precoAdicional = parseFloat(adicional.getAttribute('data-preco'));
+                        
+                        adicionais.push({
+                            nome: nomeAdicional,
+                            preco: precoAdicional
+                        });
+                        
+                        adicionalTotal += precoAdicional;
+                    });
+                    
+                    // Verificar se o produto já está no carrinho
+                    const index = carrinho.findIndex(item => 
+                        item.nome === nome && 
+                        JSON.stringify(item.adicionais.map(a => a.nome).sort()) === 
+                        JSON.stringify(adicionais.map(a => a.nome).sort())
+                    );
+                    
+                    if (index >= 0) {
+                        // Se já estiver, atualiza a quantidade
+                        carrinho[index].quantidade += quantidade;
+                    } else {
+                        // Se não estiver, adiciona novo item
+                        carrinho.push({
+                            nome,
+                            preco,
+                            quantidade,
+                            imagem,
+                            adicionais,
+                            adicionalTotal
+                        });
+                    }
+                    
+                    atualizarCarrinho();
+                    carrinhoModal.classList.add('aberto');
+                    
+                    // Efeito visual
+                    this.textContent = 'Adicionado!';
+                    setTimeout(() => {
+                        this.textContent = 'Adicionar ao Carrinho';
+                    }, 2000);
+                });
+            });
+            
+            // Controles de quantidade nos produtos
+            document.querySelectorAll('.quantidade-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('.quantidade-input');
+                    let value = parseInt(input.value);
+                    
+                    if (this.classList.contains('diminuir') && value > 1) {
+                        value--;
+                    } else if (this.classList.contains('aumentar')) {
+                        value++;
+                    }
+                    
+                    input.value = value;
+                });
+            });
+            
+            // Finalizar pedido
+            finalizarPedidoBtn.addEventListener('click', function() {
+                if (carrinho.length === 0) {
+                    alert('Seu carrinho está vazio!');
+                    return;
+                }
+                
+                // Abre o modal de pedido
+                pedidoModal.classList.add('aberto');
+            });
+
+            // Enviar pedido via WhatsApp
+            pedidoForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                const nomeCliente = document.getElementById('nome-cliente').value;
+                const telefoneCliente = document.getElementById('telefone-cliente').value;
+                const bairroCliente = document.getElementById('bairro-cliente').value;
+                const ruaCliente = document.getElementById('rua-cliente').value;
+                const pagamentoCliente = document.getElementById('pagamento-cliente').value;
+                const valorTroco = document.getElementById('valor-troco').value;
+                const tipoEntrega = document.getElementById('tipo-entrega').value;
+
+                let totalPedido = 0;
+                carrinho.forEach(item => {
+                    totalPedido += (item.preco + item.adicionalTotal) * item.quantidade;
+                });
+
+                // Validação para pagamento em dinheiro
+                if (pagamentoCliente === 'Dinheiro') {
+                    if (!valorTroco) {
+                        alert('Por favor, informe com qual valor você irá pagar.');
+                        valorTrocoInput.focus();
+                        return;
+                    }
+                    if (parseFloat(valorTroco) < totalPedido) {
+                        alert(`O valor para pagamento (R$ ${parseFloat(valorTroco).toFixed(2)}) não pode ser menor que o total do pedido (R$ ${totalPedido.toFixed(2)}).`);
+                        valorTrocoInput.focus();
+                        return;
+                    }
+                }
+
+                let mensagem = `*Novo Pedido - Rancho do Açaí*\n\n`;
+                mensagem += `*Cliente:* ${nomeCliente}\n`;
+                mensagem += `*Telefone:* ${telefoneCliente}\n\n`;
+                mensagem += `*Endereço de Entrega:*\n`;
+                mensagem += `Bairro: ${bairroCliente}\n`;
+                mensagem += `Rua: ${ruaCliente}\n\n`;
+                mensagem += `*Tipo de Pedido:* ${tipoEntrega}\n`;
+                
+                if (tipoEntrega === 'Entrega') {
+                    mensagem += `*Endereço de Entrega:*\n`;
+                    mensagem += `Bairro: ${bairroCliente}\n`;
+                    mensagem += `Rua: ${ruaCliente}\n\n`;
+                }
+                
+                mensagem += `*Itens do Pedido:*\n`;
+                mensagem += `----------------------\n`;
+                carrinho.forEach(item => {
+                    const itemTotal = (item.preco + item.adicionalTotal) * item.quantidade;
+                    mensagem += `${item.quantidade}x *${item.nome}*\n`;
+                    if (item.adicionais.length > 0) {
+                        mensagem += `  (Adicionais: ${item.adicionais.map(a => a.nome).join(', ')})\n`;
+                    }
+                    mensagem += `  Subtotal: R$ ${itemTotal.toFixed(2)}\n`;
+                });
+
+                mensagem += `----------------------\n`;
+                mensagem += `*Total do Pedido: R$ ${totalPedido.toFixed(2)}*\n`;
+                mensagem += `*Forma de Pagamento:* ${pagamentoCliente}\n`;
+                if (pagamentoCliente === 'Dinheiro') {
+                    const valorPago = parseFloat(valorTroco);
+                    const troco = valorPago - totalPedido;
+                    mensagem += `*Pagar com:* R$ ${valorPago.toFixed(2)}\n`;
+                    if (troco > 0) {
+                        mensagem += `*Troco:* R$ ${troco.toFixed(2)}\n`;
+                    }
+                }
+
+                // Substitua pelo seu número de WhatsApp
+                const numeroWhatsApp = '5567999361566'; 
+                const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+
+                // Abrir link do WhatsApp
+                window.open(linkWhatsApp, '_blank');
+
+                // Limpar tudo e fechar modais
+                carrinho = [];
+                atualizarCarrinho();
+                pedidoModal.classList.remove('aberto');
+                carrinhoModal.classList.remove('aberto');
+                pedidoForm.reset();
+                toggleTrocoField(); // Garante que o campo de troco seja resetado corretamente
+            });
+            
+            // Limpar carrinho
+            limparCarrinhoBtn.addEventListener('click', function() {
+                carrinho = [];
+                atualizarCarrinho();
+            });
+            
+            // Função para atualizar o carrinho
+            function atualizarCarrinho() {
+                // Limpar itens do carrinho
+                carrinhoItens.innerHTML = '';
+                
+                if (carrinho.length === 0) {
+                    carrinhoItens.innerHTML = '<div class="carrinho-vazio"><p>Seu carrinho está vazio</p></div>';
+                    carrinhoContador.textContent = '0';
+                    carrinhoTotal.textContent = 'R$ 0,00';
+                    return;
+                }
+                
+                // Adicionar itens ao carrinho
+                let total = 0;
+                let totalItens = 0;
+                
+                carrinho.forEach(item => {
+                    const itemTotal = (item.preco + item.adicionalTotal) * item.quantidade;
+                    total += itemTotal;
+                    totalItens += item.quantidade;
+                    
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'carrinho-item';
+                    itemElement.innerHTML = `
+                        <div class="carrinho-item-img">
+                            <img src="${item.imagem}" alt="${item.nome}">
+                        </div>
+                        <div class="carrinho-item-info">
+                            <div class="carrinho-item-nome">${item.nome}</div>
+                            ${item.adicionais.length > 0 ? 
+                                `<div class="carrinho-item-adicionais">Adicionais: ${item.adicionais.map(a => a.nome).join(', ')}</div>` : 
+                                ''}
+                            <div class="carrinho-item-preco">R$ ${(item.preco + item.adicionalTotal).toFixed(2)} (un)</div>
+                            <div class="carrinho-item-quantidade">
+                                <button class="quantidade-btn diminuir-item btn-pequeno" data-nome="${item.nome}" data-adicionais="${JSON.stringify(item.adicionais)}">-</button>
+                                <span>${item.quantidade}</span>
+                                <button class="quantidade-btn aumentar-item btn-pequeno" data-nome="${item.nome}" data-adicionais="${JSON.stringify(item.adicionais)}">+</button>
+                                <button class="quantidade-btn remover-item btn-pequeno" data-nome="${item.nome}" data-adicionais="${JSON.stringify(item.adicionais)}" style="margin-left: auto;">Remover</button>
+                            </div>
+                            <div class="carrinho-item-total">Total: R$ ${itemTotal.toFixed(2)}</div>
+                        </div>
+                    `;
+                    
+                    carrinhoItens.appendChild(itemElement);
+                });
+                
+                // Atualizar contador e total
+                carrinhoContador.textContent = totalItens;
+                carrinhoTotal.textContent = `R$ ${total.toFixed(2)}`;
+                
+                // Adicionar eventos aos botões de quantidade no carrinho
+                document.querySelectorAll('.diminuir-item').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const nome = this.getAttribute('data-nome');
+                        const adicionais = JSON.parse(this.getAttribute('data-adicionais'));
+                        const item = carrinho.find(item => 
+                            item.nome === nome && 
+                            JSON.stringify(item.adicionais) === JSON.stringify(adicionais)
+                        );
+                        
+                        if (item.quantidade > 1) {
+                            item.quantidade--;
+                            atualizarCarrinho();
+                        }
+                    });
+                });
+                
+                document.querySelectorAll('.aumentar-item').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const nome = this.getAttribute('data-nome');
+                        const adicionais = JSON.parse(this.getAttribute('data-adicionais'));
+                        const item = carrinho.find(item => 
+                            item.nome === nome && 
+                            JSON.stringify(item.adicionais) === JSON.stringify(adicionais)
+                        );
+                        
+                        item.quantidade++;
+                        atualizarCarrinho();
+                    });
+                });
+                
+                document.querySelectorAll('.remover-item').forEach(btn => {
+                    btn.addEventListener('click', function() {
+                        const nome = this.getAttribute('data-nome');
+                        const adicionais = JSON.parse(this.getAttribute('data-adicionais'));
+                        carrinho = carrinho.filter(item => 
+                            !(item.nome === nome && 
+                            JSON.stringify(item.adicionais) === JSON.stringify(adicionais))
+                        );
+                        atualizarCarrinho();
+                    });
+                });
+            }
+            
+            // Animação ao rolar a página
+            const animatedElements = document.querySelectorAll('.produto, .formulario');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'fadeInUp 1s ease forwards';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Filtro de categorias
+            const categoriaBtns = document.querySelectorAll('.categoria-btn');
+            const produtos = document.querySelectorAll('.produto');
+            
+            categoriaBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove a classe ativo de todos os botões
+                    categoriaBtns.forEach(b => b.classList.remove('ativo'));
+                    // Adiciona a classe ativo ao botão clicado
+                    this.classList.add('ativo');
+                    
+                    const categoria = this.getAttribute('data-categoria');
+                    
+                    produtos.forEach(produto => {
+                        if (categoria === 'todos' || produto.getAttribute('data-categoria') === categoria) {
+                            produto.style.display = 'block';
+                            produto.style.animation = 'fadeIn 0.5s ease';
+                        } else {
+                            produto.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Efeito de hover nos produtos
+            produtos.forEach(produto => {
+                produto.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-10px)';
+                    this.style.boxShadow = '0 15px 30px rgba(0, 0, 0, 0.2)';
+                });
+                
+                produto.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+                });
+            });
+
+            // Fechar modal ao clicar fora
+            pedidoModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    pedidoModal.classList.remove('aberto');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
