@@ -116,14 +116,33 @@
             position: relative;
         }
         
-        .hero-bg {
+        .hero-carousel {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
             z-index: 0;
+        }
+        
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+        }
+        
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
         
         .hero::before {
@@ -133,7 +152,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(106, 13, 173, 0.6);
+            background: transparent; /* Cor do overlay removida para destacar os banners */
             z-index: 1;
         }
         
@@ -155,6 +174,7 @@
             font-size: 1.2rem;
             margin-bottom: 2rem;
             line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* Sombra para garantir a legibilidade sobre os banners */
         }
         
         .btn {
@@ -910,12 +930,22 @@
     </header>
 
     <section class="hero" id="inicio">
-        <img src="banner.jpeg" alt="Banner Rancho do Açaí" class="hero-bg">
+        <div class="hero-carousel">
+            <div class="carousel-slide active">
+                <img src="imagemnova4.png" alt="Banner Rancho do Açaí 1">
+            </div>
+            <div class="carousel-slide">
+                <img src="iamgem2.png" alt="Banner Rancho do Açaí 2">
+            </div>
+            <div class="carousel-slide">
+                <img src="imagem1.png" alt="Banner Rancho do Açaí 3">
+            </div>
+        </div>
         <div class="container">
             <div class="hero-content">
-                <h2>O melhor açaí da região!</h2>
-                <p>Delicie-se com nosso açaí cremoso e saboroso, preparado com os melhores ingredientes e acompanhamentos frescos. Experimente hoje mesmo!</p>
-                <a href="#produtos" class="btn">Ver Produtos</a>
+                <h2>O Melhor Açaí da Região!</h2>
+                <p>Venha experimentar o verdadeiro sabor do açaí com os melhores acompanhamentos.</p>
+                <a href="#produtos" class="btn">Peça Agora</a>
             </div>
         </div>
     </section>
@@ -941,7 +971,7 @@
                     <div class="produto-info">
                         <h3>Copo 330ml</h3>
                         <p>Açaí puro e cremoso no tamanho ideal para seu lanche.</p>
-                        <span class="preco">R$ 0,00</span>
+                        <span class="preco">R$ 18,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1070,7 +1100,7 @@
                     <div class="produto-info">
                         <h3>Copo 550ml</h3>
                         <p>Açaí cremoso no copo médio, perfeito para matar a vontade.</p>
-                        <span class="preco">R$ 0,00</span>
+                        <span class="preco">R$ 21,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1195,12 +1225,12 @@
                 <div class="produto" data-categoria="copos">
                     <div class="produto-img">
                         <span class="destaque">Mais Vendido</span>
-                        <img src="copo770.jpg" alt="Copo 770ml">
+                        <img src="copo770novo.jpg" alt="Copo 770ml">
                     </div>
                     <div class="produto-info">
                         <h3>Copo 770ml</h3>
                         <p>Para quem tem muita fome! Nosso maior copo de açaí.</p>
-                        <span class="preco">R$ 0,00</span>
+                        <span class="preco">R$ 24,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1325,12 +1355,12 @@
                 <!-- Combos de Açaí -->
                 <div class="produto" data-categoria="especiais">
                     <div class="produto-img">
-                        <img src="acaigarrafa.jpg" alt="Açaí na Garrafa 550ml">
+                        <img src="garrafa2.jpg" alt="Açaí na Garrafa 550ml">
                     </div>
                     <div class="produto-info">
                         <h3>Açaí na Garrafa 550ml</h3>
                         <p>Açaí puro e cremoso na garrafa, ideal para compartilhar ou para quem quer mais!</p>
-                        <span class="preco">R$ 0,00</span>
+                        <span class="preco">R$ 15,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1342,27 +1372,7 @@
                             <div class="ingredientes-title">Adicionais:</div>
                             <div class="ingredientes-opcoes">
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
                                     <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
@@ -1374,32 +1384,12 @@
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
                                     <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="7.00"> Nutella
+                                    <span class="ingrediente-preco">+R$7,00</span>
                                 </label>
                             </div>
                         </div>
@@ -1921,6 +1911,12 @@
                     totalPedido += (item.preco + item.adicionalTotal) * item.quantidade;
                 });
 
+                let taxaEntrega = 0;
+                if (tipoEntrega === 'Entrega') {
+                    taxaEntrega = 4.00;
+                    totalPedido += taxaEntrega;
+                }
+
                 // Validação para pagamento em dinheiro
                 if (pagamentoCliente === 'Dinheiro') {
                     if (!valorTroco) {
@@ -1958,6 +1954,9 @@
                 });
 
                 mensagem += `----------------------\n`;
+                if (taxaEntrega > 0) {
+                    mensagem += `Taxa de Entrega: R$ ${taxaEntrega.toFixed(2)}\n`;
+                }
                 mensagem += `*Total do Pedido: R$ ${totalPedido.toFixed(2)}*\n`;
                 mensagem += `*Forma de Pagamento:* ${pagamentoCliente}\n`;
                 if (pagamentoCliente === 'Dinheiro') {
@@ -2138,6 +2137,20 @@
                     this.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
                 });
             });
+
+            // Carousel Banner
+            const slides = document.querySelectorAll('.carousel-slide');
+            let currentSlide = 0;
+
+            function nextSlide() {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
+
+            if (slides.length > 0) {
+                setInterval(nextSlide, 5000); // Troca a cada 5 segundos
+            }
 
             // Fechar modal ao clicar fora
             pedidoModal.addEventListener('click', function(e) {
