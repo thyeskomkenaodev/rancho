@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rancho do Açaí - O melhor açaí da região!</title>
+    <title>Açaí Ranch - O melhor açaí da região!</title>
     <!-- Font Awesome para ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- Fonte Personalizada para o Logotipo -->
@@ -112,7 +112,7 @@
             height: 80vh;
             display: flex;
             align-items: center;
-            margin-top: 70px;
+            margin-top: 82px; /* Ajustado para compensar a altura do header (50px logo + 2*1rem padding) */
             position: relative;
         }
         
@@ -379,6 +379,21 @@
             font-size: 0.8rem;
             color: var(--roxo-secundario);
             margin-left: 0.3rem;
+        }
+
+        .tamanho-opcoes {
+            margin-bottom: 1rem;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .tamanho-opcoes label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
         }
         
         .categorias {
@@ -885,6 +900,16 @@
                 text-align: center;
             }
             
+            .hero {
+                height: 70vh; /* Altura reduzida para telas menores para não ocupar tanto espaço */
+            }
+
+            .hero-content {
+                text-align: center; /* Centraliza o texto do banner */
+                max-width: 100%; /* Permite que o conteúdo se ajuste melhor */
+                margin: 0 auto;
+            }
+
             .hero h2 {
                 font-size: 2.2rem;
             }
@@ -913,8 +938,8 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="logo.jpg" alt="Rancho do Açaí">
-                    <h1>Rancho do Açaí</h1>
+                    <img src="NOVOLOGO.jpeg" alt="Açaí Ranch">
+                    <h1>Açaí Ranch</h1>
                 </div>
                 <div class="menu-toggle"><i class="fas fa-bars"></i></div>
                 <nav>
@@ -932,13 +957,13 @@
     <section class="hero" id="inicio">
         <div class="hero-carousel">
             <div class="carousel-slide active">
-                <img src="imagemnova4.png" alt="Banner Rancho do Açaí 1">
+                <img src="imagemnova4.png" alt="Banner Açaí Ranch 1">
             </div>
             <div class="carousel-slide">
-                <img src="iamgem2.png" alt="Banner Rancho do Açaí 2">
+                <img src="iamgem2.png" alt="Banner Açaí Ranch 2">
             </div>
             <div class="carousel-slide">
-                <img src="imagem1.png" alt="Banner Rancho do Açaí 3">
+                <img src="imagem1.png" alt="Banner Açaí Ranch 3">
             </div>
         </div>
         <div class="container">
@@ -958,12 +983,190 @@
                 <button class="categoria-btn ativo" data-categoria="todos">Todos</button>
                 <button class="categoria-btn" data-categoria="copos">Copos</button>
                 <button class="categoria-btn" data-categoria="combos">Combos</button>
-                <button class="categoria-btn" data-categoria="barcas">Barca / Roleta</button>
+                <button class="categoria-btn" data-categoria="barcas">Barca</button>
                 <button class="categoria-btn" data-categoria="especiais">Especiais</button>
+                <button class="categoria-btn" data-categoria="sorvetes">Sorvetes</button>
             </div>
             
             <div class="produtos">
                 <!-- Copos de Açaí -->
+                <div class="produto" data-categoria="copos">
+                    <div class="produto-img">
+                        <img src="WhatsApp Image 2026-02-02 at 18.31.46.jpeg" alt="Copo 200ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Copo 200ml</h3>
+                        <p>Açaí puro e cremoso no tamanho ideal para degustar.</p>
+                        <span class="preco">R$ 8,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="2.00"> Banana
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="3.00"> Morango
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="3.00"> Uva
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="3.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="2.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="2.50"> Granola
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="2.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="3.00"> Confete
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="3.00"> Bis
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="3.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="3.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="3.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="2.50"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="3.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="6.00"> Nutella
+                                    <span class="ingrediente-preco">+R$6,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="2.50"> Paçoca
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="farinha-lactea" data-preco="2.00"> Farinha Láctea
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granulado" data-preco="2.00"> Granulado
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="mel" data-preco="2.00"> Mel
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="oreo" data-preco="3.50"> Bolacha Oreo
+                                    <span class="ingrediente-preco">+R$3,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="raspa-chocolate" data-preco="3.00"> Raspa de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sorvete" data-preco="3.00"> Sorvete
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sucrilhos" data-preco="2.50"> Sucrilhos
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-caju" data-preco="3.00"> Castanha de Caju
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-amendoim" data-preco="2.50"> Castanha de Amendoim
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="negresco" data-preco="2.50"> Negresco
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ouro-branco" data-preco="3.00"> Ouro Branco
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sonho-valsa" data-preco="3.00"> Sonho de Valsa
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-chocolate" data-preco="2.00"> Cobertura de Chocolate
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-morango" data-preco="2.00"> Cobertura de Morango
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="aveia" data-preco="2.00"> Aveia em Flocos
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="3.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="beijinho" data-preco="3.00"> Beijinho
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="brigadeiro" data-preco="3.00"> Brigadeiro
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ferrero-rocher" data-preco="4.00"> Ferrero Rocher
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="choco-wafer" data-preco="4.00"> Choco Wafer
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cupuacu" data-preco="4.00"> Cupuaçu
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cereja" data-preco="4.00"> Cereja
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 200ml" data-preco="8.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
                 <div class="produto" data-categoria="copos">
                     <div class="produto-img">
                         <img src="copo330.jpg" alt="Copo 330ml">
@@ -971,6 +1174,353 @@
                     <div class="produto-info">
                         <h3>Copo 330ml</h3>
                         <p>Açaí puro e cremoso no tamanho ideal para seu lanche.</p>
+                        <span class="preco">R$ 13,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="2.00"> Banana
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="3.00"> Morango
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="3.00"> Uva
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="3.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="2.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="2.50"> Granola
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="2.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="3.00"> Confete
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="3.00"> Bis
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="3.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="3.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="3.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="2.50"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="3.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="2.50"> Paçoca
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="farinha-lactea" data-preco="2.00"> Farinha Láctea
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granulado" data-preco="2.00"> Granulado
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="mel" data-preco="2.00"> Mel
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="oreo" data-preco="3.50"> Bolacha Oreo
+                                    <span class="ingrediente-preco">+R$3,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="raspa-chocolate" data-preco="3.00"> Raspa de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sorvete" data-preco="3.00"> Sorvete
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sucrilhos" data-preco="2.50"> Sucrilhos
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-caju" data-preco="3.00"> Castanha de Caju
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-amendoim" data-preco="2.50"> Castanha de Amendoim
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="negresco" data-preco="2.50"> Negresco
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ouro-branco" data-preco="3.00"> Ouro Branco
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sonho-valsa" data-preco="3.00"> Sonho de Valsa
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-chocolate" data-preco="2.00"> Cobertura de Chocolate
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-morango" data-preco="2.00"> Cobertura de Morango
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="aveia" data-preco="2.00"> Aveia em Flocos
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="3.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="beijinho" data-preco="3.00"> Beijinho
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="brigadeiro" data-preco="3.00"> Brigadeiro
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ferrero-rocher" data-preco="4.00"> Ferrero Rocher
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="choco-wafer" data-preco="4.00"> Choco Wafer
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cupuacu" data-preco="4.00"> Cupuaçu
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cereja" data-preco="4.00"> Cereja
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 330ml" data-preco="13.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="copos">
+                    <div class="produto-img">
+                        <img src="copo550.jpg" alt="Copo 550ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Copo 550ml</h3>
+                        <p>Açaí cremoso no copo médio, perfeito para matar a vontade.</p>
+                        <span class="preco">R$ 16,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Adicionais:</div>
+                            <div class="ingredientes-opcoes">
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="2.00"> Banana
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="3.00"> Morango
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="3.00"> Uva
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="3.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="2.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="2.50"> Granola
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="2.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="3.00"> Confete
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="3.00"> Bis
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="3.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="3.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="3.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="2.50"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="3.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="2.50"> Paçoca
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="farinha-lactea" data-preco="2.00"> Farinha Láctea
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="granulado" data-preco="2.00"> Granulado
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="mel" data-preco="2.00"> Mel
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="oreo" data-preco="3.50"> Bolacha Oreo
+                                    <span class="ingrediente-preco">+R$3,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="raspa-chocolate" data-preco="3.00"> Raspa de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sorvete" data-preco="3.00"> Sorvete
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sucrilhos" data-preco="2.50"> Sucrilhos
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-caju" data-preco="3.00"> Castanha de Caju
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-amendoim" data-preco="2.50"> Castanha de Amendoim
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="negresco" data-preco="2.50"> Negresco
+                                    <span class="ingrediente-preco">+R$2,50</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ouro-branco" data-preco="3.00"> Ouro Branco
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sonho-valsa" data-preco="3.00"> Sonho de Valsa
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-chocolate" data-preco="2.00"> Cobertura de Chocolate
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-morango" data-preco="2.00"> Cobertura de Morango
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="aveia" data-preco="2.00"> Aveia em Flocos
+                                    <span class="ingrediente-preco">+R$2,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="3.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="beijinho" data-preco="3.00"> Beijinho
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="brigadeiro" data-preco="3.00"> Brigadeiro
+                                    <span class="ingrediente-preco">+R$3,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ferrero-rocher" data-preco="4.00"> Ferrero Rocher
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="choco-wafer" data-preco="4.00"> Choco Wafer
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cupuacu" data-preco="4.00"> Cupuaçu
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cereja" data-preco="4.00"> Cereja
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 550ml" data-preco="16.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="copos">
+                    <div class="produto-img">
+                        <span class="destaque">Mais Vendido</span>
+                        <img src="copo770novo.jpg" alt="Copo 770ml">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Copo 770ml</h3>
+                        <p>Para quem tem muita fome! Nosso maior copo de açaí.</p>
                         <span class="preco">R$ 18,00</span>
                         
                         <div class="quantidade-container">
@@ -983,372 +1533,157 @@
                             <div class="ingredientes-title">Adicionais:</div>
                             <div class="ingredientes-opcoes">
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="banana" data-preco="2.00"> Banana
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="morango" data-preco="3.00"> Morango
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="3.00"> Uva
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="0.00"> Kiwi
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="3.00"> Kiwi
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="0.00"> Abacaxi
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="2.00"> Abacaxi
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="granola" data-preco="2.50"> Granola
+                                    <span class="ingrediente-preco">+R$2,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="2.00"> Canudo Wafer
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="confete" data-preco="3.00"> Confete
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="bis" data-preco="3.00"> Bis
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="0.00"> Gotas de Chocolate
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="3.00"> Gotas de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="0.00"> Ovomaltine
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="3.00"> Ovomaltine
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="0.00"> Chocoball
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="3.00"> Chocoball
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="2.50"> Leite Condensado
+                                    <span class="ingrediente-preco">+R$2,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="3.00"> Leite em Pó
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="2.50"> Paçoca
+                                    <span class="ingrediente-preco">+R$2,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="farinha-lactea" data-preco="2.00"> Farinha Láctea
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="granulado" data-preco="2.00"> Granulado
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-ninho" data-preco="0.00"> Creme de Ninho
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="mel" data-preco="2.00"> Mel
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="oreo" data-preco="3.50"> Bolacha Oreo
+                                    <span class="ingrediente-preco">+R$3,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="raspa-chocolate" data-preco="3.00"> Raspa de Chocolate
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="sorvete" data-preco="3.00"> Sorvete
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="sucrilhos" data-preco="2.50"> Sucrilhos
+                                    <span class="ingrediente-preco">+R$2,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="castanha-caju" data-preco="3.00"> Castanha de Caju
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="castanha-amendoim" data-preco="2.50"> Castanha de Amendoim
+                                    <span class="ingrediente-preco">+R$2,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-manga" data-preco="0.00"> Creme de Manga
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="negresco" data-preco="2.50"> Negresco
+                                    <span class="ingrediente-preco">+R$2,50</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-maracuja" data-preco="0.00"> Creme de Maracujá
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 330ml" data-preco="0.00">Adicionar ao Carrinho</button>
-                    </div>
-                </div>
-                
-                <div class="produto" data-categoria="copos">
-                    <div class="produto-img">
-                        <img src="copo550.jpg" alt="Copo 550ml">
-                    </div>
-                    <div class="produto-info">
-                        <h3>Copo 550ml</h3>
-                        <p>Açaí cremoso no copo médio, perfeito para matar a vontade.</p>
-                        <span class="preco">R$ 21,00</span>
-                        
-                        <div class="quantidade-container">
-                            <button class="quantidade-btn diminuir">-</button>
-                            <input type="number" class="quantidade-input" value="1" min="1">
-                            <button class="quantidade-btn aumentar">+</button>
-                        </div>
-                        
-                        <div class="ingredientes-adicionais">
-                            <div class="ingredientes-title">Adicionais:</div>
-                            <div class="ingredientes-opcoes">
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="ouro-branco" data-preco="3.00"> Ouro Branco
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="sonho-valsa" data-preco="3.00"> Sonho de Valsa
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="cobertura-chocolate" data-preco="2.00"> Cobertura de Chocolate
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="0.00"> Kiwi
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="cobertura-morango" data-preco="2.00"> Cobertura de Morango
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="0.00"> Abacaxi
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="aveia" data-preco="2.00"> Aveia em Flocos
+                                    <span class="ingrediente-preco">+R$2,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="3.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="beijinho" data-preco="3.00"> Beijinho
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="brigadeiro" data-preco="3.00"> Brigadeiro
+                                    <span class="ingrediente-preco">+R$3,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="ferrero-rocher" data-preco="4.00"> Ferrero Rocher
+                                    <span class="ingrediente-preco">+R$4,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="0.00"> Gotas de Chocolate
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="choco-wafer" data-preco="4.00"> Choco Wafer
+                                    <span class="ingrediente-preco">+R$4,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="0.00"> Ovomaltine
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="cupuacu" data-preco="4.00"> Cupuaçu
+                                    <span class="ingrediente-preco">+R$4,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="0.00"> Chocoball
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-ninho" data-preco="0.00"> Creme de Ninho
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-manga" data-preco="0.00"> Creme de Manga
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-maracuja" data-preco="0.00"> Creme de Maracujá
-                                    <span class="ingrediente-preco">+R$0,00</span>
+                                    <input type="checkbox" name="adicionais" value="cereja" data-preco="4.00"> Cereja
+                                    <span class="ingrediente-preco">+R$4,00</span>
                                 </label>
                             </div>
                         </div>
                         
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 550ml" data-preco="0.00">Adicionar ao Carrinho</button>
-                    </div>
-                </div>
-                
-                <div class="produto" data-categoria="copos">
-                    <div class="produto-img">
-                        <span class="destaque">Mais Vendido</span>
-                        <img src="copo770novo.jpg" alt="Copo 770ml">
-                    </div>
-                    <div class="produto-info">
-                        <h3>Copo 770ml</h3>
-                        <p>Para quem tem muita fome! Nosso maior copo de açaí.</p>
-                        <span class="preco">R$ 24,00</span>
-                        
-                        <div class="quantidade-container">
-                            <button class="quantidade-btn diminuir">-</button>
-                            <input type="number" class="quantidade-input" value="1" min="1">
-                            <button class="quantidade-btn aumentar">+</button>
-                        </div>
-                        
-                        <div class="ingredientes-adicionais">
-                            <div class="ingredientes-title">Adicionais:</div>
-                            <div class="ingredientes-opcoes">
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="banana" data-preco="0.00"> Banana
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="kiwi" data-preco="0.00"> Kiwi
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="abacaxi" data-preco="0.00"> Abacaxi
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="granola" data-preco="0.00"> Granola
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="canudo-wafer" data-preco="0.00"> Canudo Wafer
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="confete" data-preco="0.00"> Confete
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="bis" data-preco="0.00"> Bis
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="gotas-chocolate" data-preco="0.00"> Gotas de Chocolate
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="ovomaltine" data-preco="0.00"> Ovomaltine
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="chocoball" data-preco="0.00"> Chocoball
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-condensado" data-preco="0.00"> Leite Condensado
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-em-po" data-preco="0.00"> Leite em Pó
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-ninho" data-preco="0.00"> Creme de Ninho
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-manga" data-preco="0.00"> Creme de Manga
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-maracuja" data-preco="0.00"> Creme de Maracujá
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 770ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Copo 770ml" data-preco="18.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 
@@ -1370,6 +1705,7 @@
                         
                         <div class="ingredientes-adicionais">
                             <div class="ingredientes-title">Adicionais:</div>
+                            <p style="font-size: 0.85rem; color: #d32f2f; margin-bottom: 8px; font-weight: 600;">* São apenas 2 adicionais. Nutella, Choco Wafer, Cereja e Ferrero Rocher são cobrados à parte.</p>
                             <div class="ingredientes-opcoes">
                                 <label class="ingrediente-option">
                                     <input type="checkbox" name="adicionais" value="morango" data-preco="0.00"> Morango
@@ -1384,28 +1720,116 @@
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="6.00"> Nutella
+                                    <span class="ingrediente-preco">+R$6,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="farinha-lactea" data-preco="0.00"> Farinha Láctea
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="7.00"> Nutella
-                                    <span class="ingrediente-preco">+R$7,00</span>
+                                    <input type="checkbox" name="adicionais" value="granulado" data-preco="0.00"> Granulado
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="mel" data-preco="0.00"> Mel
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="oreo" data-preco="0.00"> Bolacha Oreo
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="raspa-chocolate" data-preco="0.00"> Raspa de Chocolate
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sorvete" data-preco="0.00"> Sorvete
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sucrilhos" data-preco="0.00"> Sucrilhos
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-caju" data-preco="0.00"> Castanha de Caju
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-amendoim" data-preco="0.00"> Castanha de Amendoim
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="negresco" data-preco="0.00"> Negresco
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ouro-branco" data-preco="0.00"> Ouro Branco
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sonho-valsa" data-preco="0.00"> Sonho de Valsa
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-chocolate" data-preco="0.00"> Cobertura de Chocolate
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-morango" data-preco="0.00"> Cobertura de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="aveia" data-preco="0.00"> Aveia em Flocos
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="0.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="beijinho" data-preco="0.00"> Beijinho
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="brigadeiro" data-preco="0.00"> Brigadeiro
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ferrero-rocher" data-preco="4.00"> Ferrero Rocher
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="choco-wafer" data-preco="4.00"> Choco Wafer
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cupuacu" data-preco="0.00"> Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cereja" data-preco="4.00"> Cereja
+                                    <span class="ingrediente-preco">+R$4,00</span>
                                 </label>
                             </div>
                         </div>
                         
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Açaí na Garrafa 550ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Açaí na Garrafa 550ml" data-preco="15.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 
                 <div class="produto" data-categoria="combos">
                     <div class="produto-img">
-                        <img src="combo300.jpg" alt="Combo Rancho 330ml">
+                        <img src="COMBOWAFER.jpeg" alt="Combo Chocowafer">
                     </div>
                     <div class="produto-info">
-                        <h3>Combo Rancho 330ml</h3>
-                        <p>Açaí acompanhado de Leite em pó, Leite condensado e Banana.</p>
-                        <span class="preco">R$ 0,00</span>
+                        <h3>Combo Chocowafer</h3>
+                        <p>Açaí, Chocowafer, Banana, Leite Condensado e Granola.</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-combo-chocowafer" value="330ml" data-preco="21.00" checked> 330ml</label>
+                            <label><input type="radio" name="tamanho-combo-chocowafer" value="550ml" data-preco="26.00"> 550ml</label>
+                        </div>
+                        <span class="preco">R$ 21,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1413,19 +1837,22 @@
                             <button class="quantidade-btn aumentar">+</button>
                         </div>
                         
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Rancho 330ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Chocowafer">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 
                 <div class="produto" data-categoria="combos">
                     <div class="produto-img">
-                        <span class="destaque">Novidade</span>
-                        <img src="combo550.avif" alt="Combo Rancho 550ml">
+                        <img src="combo300.jpg" alt="Combo Ferrero Rocher">
                     </div>
                     <div class="produto-info">
-                        <h3>Combo Rancho 550ml</h3>
-                        <p>Açaí acompanhado de Leite em pó, Leite condensado e Banana.</p>
-                        <span class="preco">R$ 0,00</span>
+                        <h3>Combo Ferrero Rocher</h3>
+                        <p>Açaí, Ferrero Rocher, Morango, Banana e Leite em Pó.</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-combo-ferrero" value="330ml" data-preco="21.00" checked> 330ml</label>
+                            <label><input type="radio" name="tamanho-combo-ferrero" value="550ml" data-preco="26.00"> 550ml</label>
+                        </div>
+                        <span class="preco">R$ 21,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1433,7 +1860,99 @@
                             <button class="quantidade-btn aumentar">+</button>
                         </div>
                         
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Rancho 550ml" data-preco="0.00">Adicionar ao Carrinho</button>
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Ferrero Rocher">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <div class="produto" data-categoria="combos">
+                    <div class="produto-img">
+                        <img src="COMBOWAFER.jpeg" alt="Combo Ovomaltine">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Combo Ovomaltine</h3>
+                        <p>Açaí, Ovomaltine, Nutella, Leite Condensado e Leite em Pó.</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-combo-ovomaltine" value="330ml" data-preco="21.00" checked> 330ml</label>
+                            <label><input type="radio" name="tamanho-combo-ovomaltine" value="550ml" data-preco="26.00"> 550ml</label>
+                        </div>
+                        <span class="preco">R$ 21,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Ovomaltine">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="produto" data-categoria="combos">
+                    <div class="produto-img">
+                        <img src="combo300.jpg" alt="Combo Açaí Ranch">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Combo Açaí Ranch</h3>
+                        <p>Açaí, Nutella, Morango, Leite em Pó e Granola.</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-combo-ranch" value="330ml" data-preco="21.00" checked> 330ml</label>
+                            <label><input type="radio" name="tamanho-combo-ranch" value="550ml" data-preco="26.00"> 550ml</label>
+                        </div>
+                        <span class="preco">R$ 21,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Açaí Ranch">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="produto" data-categoria="combos">
+                    <div class="produto-img">
+                        <img src="COMBOWAFER.jpeg" alt="Combo Tradicional">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Combo Tradicional</h3>
+                        <p>Açaí, Nutella, Leite Condensado, Leite em Pó e Banana.</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-combo-tradicional" value="330ml" data-preco="21.00" checked> 330ml</label>
+                            <label><input type="radio" name="tamanho-combo-tradicional" value="550ml" data-preco="26.00"> 550ml</label>
+                        </div>
+                        <span class="preco">R$ 21,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Tradicional">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="produto" data-categoria="combos">
+                    <div class="produto-img">
+                        <img src="combo300.jpg" alt="Combo Especial">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Combo Especial</h3>
+                        <p>Açaí, Nutella, Confete e Morango.</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-combo-especial" value="330ml" data-preco="21.00" checked> 330ml</label>
+                            <label><input type="radio" name="tamanho-combo-especial" value="550ml" data-preco="26.00"> 550ml</label>
+                        </div>
+                        <span class="preco">R$ 21,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Combo Especial">Adicionar ao Carrinho</button>
                     </div>
                 </div>
                 
@@ -1444,8 +1963,8 @@
                     </div>
                     <div class="produto-info">
                         <h3>Barca</h3>
-                        <p>Nossa barca média vem com açaí, banana, morango, granola e leite em pó. Perfeita para dividir!</p>
-                        <span class="preco">R$ 0,00</span>
+                        <p>Nossa Barca Perfeita para dividir!</p>
+                        <span class="preco">R$ 35,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1455,13 +1974,14 @@
                         
                         <div class="ingredientes-adicionais">
                             <div class="ingredientes-title">Adicionais Extras:</div>
+                            <p style="font-size: 0.85rem; color: #d32f2f; margin-bottom: 8px; font-weight: 600;">* São 6 adicionais de sua escolha.</p>
                             <div class="ingredientes-opcoes">
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="uva" data-preco="0.00"> Uva
+                                    <input type="checkbox" name="adicionais" value="uva" data-preco="3.00"> Uva
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="leite-condensado-extra" data-preco="0.00"> Leite Condensado
+                                    <input type="checkbox" name="adicionais" value="leite-condensado-extra" data-preco="2.50"> Leite Condensado
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
@@ -1469,53 +1989,181 @@
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="castanha" data-preco="0.00"> Castanha
+                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="2.50"> Paçoca
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="pacoca" data-preco="0.00"> Paçoca
+                                    <input type="checkbox" name="adicionais" value="farinha-lactea" data-preco="2.00"> Farinha Láctea
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
+                                    <input type="checkbox" name="adicionais" value="granulado" data-preco="2.00"> Granulado
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
+                                    <input type="checkbox" name="adicionais" value="coco-ralado" data-preco="2.00"> Coco Ralado
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
+                                    <input type="checkbox" name="adicionais" value="mel" data-preco="2.00"> Mel
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
+                                    <input type="checkbox" name="adicionais" value="oreo" data-preco="3.50"> Bolacha Oreo
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
+                                    <input type="checkbox" name="adicionais" value="raspa-chocolate" data-preco="3.00"> Raspa de Chocolate
                                     <span class="ingrediente-preco">+R$0,00</span>
                                 </label>
                                 <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
+                                    <input type="checkbox" name="adicionais" value="sorvete" data-preco="3.00"> Sorvete
                                     <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sucrilhos" data-preco="2.50"> Sucrilhos
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-caju" data-preco="3.00"> Castanha de Caju
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="castanha-amendoim" data-preco="2.50"> Castanha de Amendoim
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="negresco" data-preco="2.50"> Negresco
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ouro-branco" data-preco="3.00"> Ouro Branco
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="sonho-valsa" data-preco="3.00"> Sonho de Valsa
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-chocolate" data-preco="2.00"> Cobertura de Chocolate
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-morango" data-preco="2.00"> Cobertura de Morango
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cobertura-tutti-frutti" data-preco="2.00"> Cobertura de Tutti Frutti
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="aveia" data-preco="2.00"> Aveia em Flocos
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="3.00"> Chantilly
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="beijinho" data-preco="3.00"> Beijinho
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="brigadeiro" data-preco="3.00"> Brigadeiro
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="ferrero-rocher" data-preco="4.00"> Ferrero Rocher
+                                    <span class="ingrediente-preco">+R$4,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="choco-wafer" data-preco="0.00"> Choco Wafer
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cupuacu" data-preco="0.00"> Cupuaçu
+                                    <span class="ingrediente-preco">+R$0,00</span>
+                                </label>
+                                <label class="ingrediente-option">
+                                    <input type="checkbox" name="adicionais" value="cereja" data-preco="4.00"> Cereja
+                                    <span class="ingrediente-preco">+R$4,00</span>
                                 </label>
                             </div>
                         </div>
                         
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Barca" data-preco="0.00">Adicionar ao Carrinho</button>
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Barca" data-preco="35.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+                
+                <!-- Sorvetes -->
+                <div class="produto" data-categoria="sorvetes">
+                    <div class="produto-img">
+                        <img src="CASQUINHA.png" alt="Casquinha">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Casquinha</h3>
+                        <p>Casquinha crocante com sorvete cremoso.</p>
+                        <span class="preco">R$ 5,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Sabor:</div>
+                            <div class="tamanho-opcoes" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                                <label><input type="radio" name="sabor-casquinha" value="Baunilha" checked> Baunilha</label>
+                                <label><input type="radio" name="sabor-casquinha" value="Chocolate"> Chocolate</label>
+                                <label><input type="radio" name="sabor-casquinha" value="Misto"> Misto</label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Casquinha" data-preco="5.00">Adicionar ao Carrinho</button>
                     </div>
                 </div>
 
-                <div class="produto" data-categoria="barcas">
+                <div class="produto" data-categoria="sorvetes">
                     <div class="produto-img">
-                        <span class="destaque">Para a Galera</span>
-                        <img src="roleta.jpg" alt="Barca de Açaí Grande">
+                        <img src="CASCAO.avif" alt="Cascão">
                     </div>
                     <div class="produto-info">
-                        <h3>Roleta</h3>
-                        <p>Açaí para toda a turma! Acompanha banana, morango, kiwi, granola, leite em pó e leite condensado.</p>
-                        <span class="preco">R$ 0,00</span>
+                        <h3>Cascão</h3>
+                        <p>Cascão crocante com muito mais sorvete.</p>
+                        <span class="preco">R$ 10,00</span>
+                        
+                        <div class="quantidade-container">
+                            <button class="quantidade-btn diminuir">-</button>
+                            <input type="number" class="quantidade-input" value="1" min="1">
+                            <button class="quantidade-btn aumentar">+</button>
+                        </div>
+
+                        <div class="ingredientes-adicionais">
+                            <div class="ingredientes-title">Sabor:</div>
+                            <div class="tamanho-opcoes" style="flex-direction: column; align-items: flex-start; gap: 0.5rem;">
+                                <label><input type="radio" name="sabor-cascao" value="Baunilha" checked> Baunilha</label>
+                                <label><input type="radio" name="sabor-cascao" value="Chocolate"> Chocolate</label>
+                                <label><input type="radio" name="sabor-cascao" value="Misto"> Misto</label>
+                            </div>
+                        </div>
+                        
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Cascão" data-preco="10.00">Adicionar ao Carrinho</button>
+                    </div>
+                </div>
+
+                <div class="produto" data-categoria="sorvetes">
+                    <div class="produto-img">
+                        <img src="POTES.jpeg" alt="Pote de Açaí">
+                    </div>
+                    <div class="produto-info">
+                        <h3>Pote de Açaí</h3>
+                        <p>Leve o melhor açaí para casa!</p>
+                        <div class="tamanho-opcoes">
+                            <label><input type="radio" name="tamanho-pote" value="1kg" data-preco="28.00" checked> 1kg</label>
+                            <label><input type="radio" name="tamanho-pote" value="2kg" data-preco="45.00"> 2kg</label>
+                        </div>
+                        <span class="preco">R$ 28,00</span>
                         
                         <div class="quantidade-container">
                             <button class="quantidade-btn diminuir">-</button>
@@ -1523,53 +2171,7 @@
                             <button class="quantidade-btn aumentar">+</button>
                         </div>
                         
-                        <div class="ingredientes-adicionais">
-                            <div class="ingredientes-title">Adicionais Extras:</div>
-                            <div class="ingredientes-opcoes">
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="nutella" data-preco="0.00"> Nutella
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="frutas-vermelhas" data-preco="0.00"> Frutas Vermelhas
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="whey" data-preco="0.00"> Whey Protein
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="chantilly" data-preco="0.00"> Chantilly
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-cupuacu" data-preco="0.00"> Creme de Cupuaçu
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-iogurte" data-preco="0.00"> Creme de Iogurte
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-pistache" data-preco="0.00"> Creme de Pistache
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-kitkat" data-preco="0.00"> Creme de Kit Kat
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-avela" data-preco="0.00"> Creme de Avelã
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                                <label class="ingrediente-option">
-                                    <input type="checkbox" name="adicionais" value="creme-morango" data-preco="0.00"> Creme de Morango
-                                    <span class="ingrediente-preco">+R$0,00</span>
-                                </label>
-                            </div>
-                        </div>
-                        
-                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Roleta" data-preco="0.00">Adicionar ao Carrinho</button>
+                        <button class="btn btn-roxo adicionar-carrinho" data-nome="Pote de Açaí">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
@@ -1580,7 +2182,7 @@
         <div class="container">
             <h2 class="section-title">Sobre Nós</h2>
             <div class="sobre-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">O Rancho do Açaí nasceu da paixão por oferecer o melhor açaí da região, com qualidade incomparável e sabor inigualável.</p>
+                <p style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">O Açaí Ranch nasceu da paixão por oferecer o melhor açaí da região, com qualidade incomparável e sabor inigualável.</p>
                 <p style="margin-bottom: 1.5rem; line-height: 1.6; font-size: 1.1rem;">Nossa missão é levar até você a autêntica experiência do açaí, preparado com frutas selecionadas e acompanhamentos frescos, garantindo sabor e saúde em cada colherada.</p>
                 <div style="margin: 2rem 0;">
                     <h3 style="color: var(--roxo-primario); margin-bottom: 1rem;">Nosso Diferencial</h3>
@@ -1595,9 +2197,14 @@
         <div class="container">
             <h2 class="section-title">Contato</h2>
             <div style="text-align: center; margin-bottom: 2rem;">
-                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-map-marker-alt" style="color: var(--roxo-primario); margin-right: 10px;"></i> RUA DOMINICIA LAURA BATISTA, 614 - BRASILANDIA</p>
-                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-phone" style="color: var(--roxo-primario); margin-right: 10px;"></i> (67) 99936-1566</p>
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-map-marker-alt" style="color: var(--roxo-primario); margin-right: 10px;"></i> PRAÇA SANTA MARIA 228, BRASILÂNDIA - MS, 79670-000</p>
+                <p style="margin-bottom: 1rem; font-size: 1.1rem;"><i class="fas fa-phone" style="color: var(--roxo-primario); margin-right: 10px;"></i> (67) 99683-6291</p>
                 <p style="font-size: 1.1rem;"><i class="fas fa-envelope" style="color: var(--roxo-primario); margin-right: 10px;"></i> </p>
+            </div>
+            
+            <!-- Mapa de Localização -->
+            <div style="width: 100%; height: 400px; margin-bottom: 2rem; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=Pra%C3%A7a%20Santa%20Maria%20228%20Brasil%C3%A2ndia%20MS&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
             <div style="text-align: center;">
                 <h3 style="color: var(--roxo-primario); margin-bottom: 1rem;">Horário de Funcionamento</h3>
@@ -1611,14 +2218,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="logo">
-                    <img src="logo.jpg" alt="Rancho do Açaí">
-                    <h1 style="color: var(--branco);">Rancho do Açaí</h1>
+                    <img src="logo.jpg" alt="Açaí Ranch">
+                    <h1 style="color: var(--branco);">Açaí Ranch</h1>
                 </div>
                 
                 <div class="social-links">
                     <a href="https://www.facebook.com/share/16pmya9qkG/" target="_blank" aria-label="Link para o Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/ranchoacai?igsh=MWFwb3Zmdm1maXVuYw==" target="_blank" aria-label="Link para o Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/5567999361566" target="_blank" aria-label="Link para o WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.instagram.com/acairanch?igsh=MW5tcnUzOTF1N2t4eA==" target="_blank" aria-label="Link para o Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5567996836291" target="_blank" aria-label="Link para o WhatsApp"><i class="fab fa-whatsapp"></i></a>
                 </div>
                 
                 <div class="copyright">
@@ -1630,13 +2237,13 @@
 
     <!-- Botões Flutuantes de Redes Sociais -->
     <div class="social-flutuante">
-        <a href="https://www.instagram.com/ranchoacai?igsh=MWFwb3Zmdm1maXVuYw==" target="_blank" class="social-icon instagram" aria-label="Siga-nos no Instagram">
+        <a href="https://www.instagram.com/acairanch?igsh=MW5tcnUzOTF1N2t4eA==" target="_blank" class="social-icon instagram" aria-label="Siga-nos no Instagram">
             <i class="fab fa-instagram"></i>
         </a>
         <a href="https://www.facebook.com/share/16pmya9qkG/" target="_blank" class="social-icon facebook" aria-label="Curta nossa página no Facebook">
             <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://wa.me/5567999361566" target="_blank" class="social-icon whatsapp" aria-label="Fale conosco no WhatsApp">
+        <a href="https://wa.me/5567996836291" target="_blank" class="social-icon whatsapp" aria-label="Fale conosco no WhatsApp">
             <i class="fab fa-whatsapp"></i>
         </a>
     </div>
@@ -1748,6 +2355,16 @@
             
             let carrinho = [];
 
+            // Listener para opções de tamanho dos combos
+            document.querySelectorAll('input[name^="tamanho-"]').forEach(radio => {
+                radio.addEventListener('change', function() {
+                    const produtoInfo = this.closest('.produto-info');
+                    const precoSpan = produtoInfo.querySelector('.preco');
+                    const novoPreco = parseFloat(this.getAttribute('data-preco'));
+                    precoSpan.textContent = `R$ ${novoPreco.toFixed(2).replace('.', ',')}`;
+                });
+            });
+
             // Menu Mobile Toggle
             const menuToggle = document.querySelector('.menu-toggle');
             const nav = document.querySelector('nav');
@@ -1812,17 +2429,34 @@
             // Adicionar ao carrinho
             document.querySelectorAll('.adicionar-carrinho').forEach(btn => {
                 btn.addEventListener('click', function() {
-                    const produto = this.parentElement;
-                    const nome = this.getAttribute('data-nome');
-                    const preco = parseFloat(this.getAttribute('data-preco'));
-                    const quantidade = parseInt(produto.querySelector('.quantidade-input').value);
-                    const imagem = produto.parentElement.querySelector('.produto-img img').src;
+                    const produtoInfo = this.parentElement;
+                    const produtoDiv = this.closest('.produto');
+
+                    let nome = this.getAttribute('data-nome');
+                    let preco = parseFloat(this.getAttribute('data-preco'));
+                    const quantidade = parseInt(produtoInfo.querySelector('.quantidade-input').value);
+                    const imagem = produtoDiv.querySelector('.produto-img img').src;
                     
+                    // Verifica se é um combo com opções de tamanho
+                    const tamanhoSelecionadoInput = produtoDiv.querySelector('input[name^="tamanho-"]:checked');
+                    if (tamanhoSelecionadoInput) {
+                        const tamanho = tamanhoSelecionadoInput.value;
+                        preco = parseFloat(tamanhoSelecionadoInput.getAttribute('data-preco'));
+                        nome = `${nome} (${tamanho})`;
+                    }
+
+                    // Verifica se tem sabor selecionado (para sorvetes)
+                    const saborSelecionadoInput = produtoDiv.querySelector('input[name^="sabor-"]:checked');
+                    if (saborSelecionadoInput) {
+                        const sabor = saborSelecionadoInput.value;
+                        nome = `${nome} - ${sabor}`;
+                    }
+
                     // Obter ingredientes adicionais selecionados
-                    const adicionais = [];
+                    let adicionais = [];
                     let adicionalTotal = 0;
-                    
-                    produto.querySelectorAll('input[name="adicionais"]:checked').forEach(adicional => {
+
+                    produtoInfo.querySelectorAll('input[name="adicionais"]:checked').forEach(adicional => {
                         const nomeAdicional = adicional.value;
                         const precoAdicional = parseFloat(adicional.getAttribute('data-preco'));
                         
@@ -1830,9 +2464,29 @@
                             nome: nomeAdicional,
                             preco: precoAdicional
                         });
-                        
-                        adicionalTotal += precoAdicional;
                     });
+
+                    if (nome === 'Barca') {
+                        const premiumItems = ['nutella', 'ferrero-rocher', 'choco-wafer', 'cupuacu', 'cereja'];
+                        const commonItems = adicionais.filter(item => !premiumItems.includes(item.nome));
+                        const premiumSelected = adicionais.filter(item => premiumItems.includes(item.nome));
+
+                        // Soma os itens premium (sempre cobrados)
+                        premiumSelected.forEach(item => adicionalTotal += item.preco);
+
+                        // Lógica para itens comuns: 6 grátis, o restante cobra
+                        // Ordena do mais caro para o mais barato para beneficiar o cliente (grátis nos mais caros)
+                        commonItems.sort((a, b) => b.preco - a.preco);
+
+                        for (let i = 0; i < commonItems.length; i++) {
+                            if (i >= 6) {
+                                adicionalTotal += commonItems[i].preco;
+                            }
+                        }
+                    } else {
+                        // Lógica padrão para outros produtos
+                        adicionais.forEach(item => adicionalTotal += item.preco);
+                    }
                     
                     // Verificar se o produto já está no carrinho
                     const index = carrinho.findIndex(item => 
@@ -1931,7 +2585,7 @@
                     }
                 }
 
-                let mensagem = `*Novo Pedido - Rancho do Açaí*\n\n`;
+                let mensagem = `*Novo Pedido - Açaí Ranch*\n\n`;
                 mensagem += `*Cliente:* ${nomeCliente}\n`;
                 mensagem += `*Telefone:* ${telefoneCliente}\n\n`;
                 mensagem += `*Tipo de Pedido:* ${tipoEntrega}\n`;
@@ -1969,7 +2623,7 @@
                 }
 
                 // Substitua pelo seu número de WhatsApp
-                const numeroWhatsApp = '5567999361566'; 
+                const numeroWhatsApp = '5567996836291'; 
                 const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
 
                 // Abrir link do WhatsApp
